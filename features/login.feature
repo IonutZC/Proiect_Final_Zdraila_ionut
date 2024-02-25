@@ -4,6 +4,13 @@ Feature: Login Page
     Given I am on the login page
     Then The URL of the page is "https://magento.softwaretestingboard.com/customer/account/login"
 
+  Scenario: Login without credential
+    Given I am on the login page
+    When I click the login button
+
+
+
+
   Scenario: Login with invalid email
     Given I am on the login page
     When I enter "email" in the email input

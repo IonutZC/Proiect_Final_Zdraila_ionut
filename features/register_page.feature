@@ -6,5 +6,5 @@ Feature: Register Page
   Scenario: Trying to register without completing require fields check that the errors are displayed
     Given I am on the register page
     Then The register button is displayed
-    Then I click register button
-
+#    Then I click register button
+    When I enter "email" in the register_email input
