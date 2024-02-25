@@ -1,8 +1,10 @@
 from selenium import webdriver
-
+from selenium.webdriver.chrome.options import Options
 
 class Browser:
-
+    # options = webdriver.ChromeOptions()
+    # options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    # driver = webdriver.Chrome(options=options)
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.implicitly_wait(3)
