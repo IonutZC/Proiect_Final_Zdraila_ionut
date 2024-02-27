@@ -6,7 +6,7 @@ import time
 
 class RegisterPage(BasePage):
     REGISTER_PAGE_URL = "https://magento.softwaretestingboard.com/customer/account/create/"
-    REGISTER_BUTTON = (By.CLASS_NAME, "primary")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, ".action submit primary")
     REGISTER_EMAIL_INPUT = (By.ID, "email_address")
     def open(self):
         self.driver.get(self.REGISTER_PAGE_URL)

@@ -11,6 +11,11 @@ def step_impl(context):
     context.register_page.is_url_correct("https://magento.softwaretestingboard.com/customer/account/create/")
 
 
+@When('I enter "{email}" in the register email input')
+def step_impl(context, email):
+    context.register_page.set_register_email(email)
+
+
 @Then("The register button is displayed")
 def step_impl(context):
     context.register_page.is_register_button_displayed()
@@ -20,8 +25,7 @@ def step_impl(context):
 def step_impl(context):
     context.register_page.click_register_button()
 
-@When('I enter "email" in the register_email input')
-def step_impl(context, email):
-    context.login_page.set_register_email(email)
+
+
 
 
