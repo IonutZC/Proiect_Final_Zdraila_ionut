@@ -1,4 +1,5 @@
 from browser import Browser
+from pages.base_page import BasePage
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
 from pages.account_page import AccountPage

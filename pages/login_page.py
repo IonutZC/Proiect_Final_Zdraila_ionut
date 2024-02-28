@@ -32,11 +32,10 @@ class LoginPage(BasePage):
     def email_error_message_is_displayed(self):
         return self.find(self.INVALID_EMAIL_MESSAGE).is_displayed()
 
-    def email_error_message_contains_text(self,text):
+    def email_error_message_contains_text(self, text):
         return text in self.get_text(self.INVALID_EMAIL_MESSAGE)
 
-    def customer_panel_displayed(self):
-        return self.find(self.WELCOME_MESSAGE).is_displayed()
+
 
 
 

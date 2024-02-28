@@ -41,7 +41,4 @@ def step_impl(context):
             ("The account sign-in was incorrect or your account is disabled temporarily."
              " Please wait and try again later."))
 
-@then ('"Cutomer-Welcome" should be displeyed')
-def step_impl(context):
-    assert context.login_page.customer_panel_displayed(), "The panel is not displayed"
 

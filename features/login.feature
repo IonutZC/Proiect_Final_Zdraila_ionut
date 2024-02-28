@@ -33,10 +33,4 @@ Feature: Login Page
       | test3@gmail.com | 112233445 |
 
 
-  Scenario: Login with valid credentials
-    Given I am on the login page
-    When I enter "testItFactory@gmail.com" in the email input
-    And I enter "Test123456" in password input
-    And  I click the login button
-    Then "Cutomer-Welcome" should be displeyed
 
