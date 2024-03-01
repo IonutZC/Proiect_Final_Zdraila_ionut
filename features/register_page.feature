@@ -33,6 +33,16 @@ Feature: Register Page
       | Test5216846 | 12345678901      |
       | Test8888555 | 95621452585      |
 
+Scenario: Register by completing required fields with valid  data
+  Given I am on the register page
+  When I enter "PYTA10" in the first name input
+  And I enter "ITFactory" in the last name input
+  And I enter a unique email in the register email input
+  And I enter "Test912345678" in register password input
+  And I enter "Test912345678" in the confirm password input
+  And I click register button
+  Then The success message is displayed
+  And I should see "Thank you for registering with Main Website Store." success message
 
 
 
