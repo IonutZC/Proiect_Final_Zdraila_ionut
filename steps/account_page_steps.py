@@ -4,6 +4,6 @@ from behave import *
 def step_impl(context):
     context.account_page.open()
 
-@Then('The URL should be "https://magento.softwaretestingboard.com/customer/account/"')
-def step_impl(context):
-    context.account_page.is_url_correct('https://magento.softwaretestingboard.com/customer/account/')
+@Then('The URL should be "{url}"')
+def step_impl(context, url):
+    context.account_page.is_url_correct(url)

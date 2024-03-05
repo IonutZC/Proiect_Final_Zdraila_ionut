@@ -6,9 +6,9 @@ def step_impl(context):
     context.register_page.open()
 
 
-@Then('The URL should be "https://magento.softwaretestingboard.com/customer/account/create/"')
-def step_impl(context):
-    context.register_page.is_url_correct("https://magento.softwaretestingboard.com/customer/account/create/")
+@Then('The URL should be "{url}"')
+def step_impl(context, url):
+    context.register_page.is_url_correct(url)
 
 
 @When("The register button is displayed")

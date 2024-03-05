@@ -7,11 +7,10 @@ Feature: Login Page
     Given I am on the login page
     Then The URL of the page is "https://magento.softwaretestingboard.com/customer/account/login"
 
-#  Scenario: Login without credential
-#    When I click the login button
-#    Then The email  error is displayed
-#    And Password error is displayed
-
+  Scenario: Login without credential
+    When I click the login button
+    Then The email  error is displayed
+    And Password error is displayed
 
 
   @negative

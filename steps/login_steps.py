@@ -41,4 +41,12 @@ def step_impl(context):
             ("The account sign-in was incorrect or your account is disabled temporarily."
              " Please wait and try again later."))
 
+@then('The email  error is displayed')
+def step_impl(context):
+    assert context.login_page.email_error_message_is_displayed
+
+@then('Password error is displayed')
+def step_impl(context):
+    assert context.login_page.password_error_message_is_displayed()
+
 

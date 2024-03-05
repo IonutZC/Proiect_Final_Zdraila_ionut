@@ -10,6 +10,7 @@ class LoginPage(BasePage):
     ERROR_MESSAGE = (By.CLASS_NAME, "message-error")
     INVALID_EMAIL_MESSAGE = (By.ID, "email-error")
     WELCOME_MESSAGE = (By.CLASS_NAME, "customer-welcome")
+    PASSWORD_ERROR = (By.ID, "pass-error")
 
     def open(self):
         self.driver.get(self.LOGIN_PAGE_URL)
@@ -31,6 +32,9 @@ class LoginPage(BasePage):
 
     def email_error_message_is_displayed(self):
         return self.find(self.INVALID_EMAIL_MESSAGE).is_displayed()
+
+    def password_error_message_is_displayed(self):
+        return self.find(self.PASSWORD_ERROR).is_displayed()
 
     def email_error_message_contains_text(self, text):
         return text in self.get_text(self.INVALID_EMAIL_MESSAGE)
