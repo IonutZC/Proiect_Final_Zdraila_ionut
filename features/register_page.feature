@@ -1,10 +1,13 @@
 Feature: Register Page
-  Scenario: Check that the URL is correct
+  Background:
     Given I am on the register page
+
+  @sanity
+  Scenario: Check that the URL is correct
     Then The URL should be "https://magento.softwaretestingboard.com/customer/account/create/"
 
+  @negative
   Scenario: Trying to register without completing require fields check that the errors are displayed
-    Given I am on the register page
     When The register button is displayed
     And I click register button
     Then The first name error is displayed
@@ -13,15 +16,14 @@ Feature: Register Page
     And The password error is displayed
     And The confirm password is displayed
 
+  @negative
   Scenario: Trying to register with invalid email displays error
-    Given I am on the register page
     When I enter "email" in the register email input
     And I click register button
     Then I should see this "Please enter a valid email address (Ex: johndoe@domain.com)." error message
 
-
+  @negative
   Scenario Outline: Trying to register with different passwords displays errors
-    Given I am on the register page
     When I enter "<password>" in register password input
     And I enter "<confirm_password>" in the confirm password input
     And I click register button
@@ -33,8 +35,8 @@ Feature: Register Page
       | Test5216846 | 12345678901      |
       | Test8888555 | 95621452585      |
 
+@positive
 Scenario: Register by completing required fields with valid  data
-  Given I am on the register page
   When I enter "PYTA10" in the first name input
   And I enter "ITFactory" in the last name input
   And I enter a unique email in the register email input

@@ -1,5 +1,4 @@
 import random
-
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import time
@@ -32,19 +31,19 @@ class RegisterPage(BasePage):
         self.find(self.REGISTER_BUTTON).click()
 
     def first_name_error_is_displayed(self):
-        return self.find(self.FIRST_NAME_ERROR).is_displayed()
+        return self.message_error_is_displayed(self.FIRST_NAME_ERROR)
 
     def last_name_error_is_displayed(self):
-        return self.find(self.LAST_NAME_ERROR).is_displayed()
+        return self.message_error_is_displayed(self.LAST_NAME_ERROR)
 
     def register_email_error_is_displayed(self):
-        return self.find(self.REGISTER_EMAIL_ERROR).is_displayed()
+        return self.message_error_is_displayed(self.REGISTER_EMAIL_ERROR)
 
     def register_password_error_is_displayed(self):
-        return self.find(self.REGISTER_PASSWORD_ERROR).is_displayed()
+        return self.message_error_is_displayed(self.REGISTER_PASSWORD_ERROR)
 
     def confirm_password_error_is_displayed(self):
-        return self.find(self.CONFIRM_PASSWORD_ERROR).is_displayed()
+        return self.message_error_is_displayed(self.CONFIRM_PASSWORD_ERROR)
 # Set inputs
 
     def set_first_name(self, first_name):
@@ -67,7 +66,6 @@ class RegisterPage(BasePage):
     def set_confirm_password(self, confirm_password):
         self.type(self.CONFIRM_PASSWORD_INPUT, confirm_password)
 
-
 # Errors
     def register_email_error_message_contains_text(self, text):
         return text in self.get_text(self.REGISTER_EMAIL_ERROR)
@@ -77,12 +75,7 @@ class RegisterPage(BasePage):
 
 # Success message
     def success_register_message_is_displayed(self):
-        return self.find(self.SUCCESS_REGISTER_MESSAGE).is_displayed()
+        return self.message_error_is_displayed(self.SUCCESS_REGISTER_MESSAGE)
 
     def success_register_message_test(self, text):
         return text == self.get_text(self.SUCCESS_REGISTER_MESSAGE)
-
-
-
-
-
