@@ -4,6 +4,6 @@ from behave import *
 def step_impl(context):
     context.account_page.open()
 
-@Then('The URL should be "{url}"')
+@Then('The URL of the account page should be "{url}"')
 def step_impl(context, url):
     context.account_page.is_url_correct(url)

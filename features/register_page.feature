@@ -4,7 +4,7 @@ Feature: Register Page
 
   @sanity
   Scenario: Check that the URL is correct
-    Then The URL should be "https://magento.softwaretestingboard.com/customer/account/create/"
+    Then The URL of the register page should be "https://magento.softwaretestingboard.com/customer/account/create/"
 
   @negative
   Scenario: Trying to register without completing require fields check that the errors are displayed

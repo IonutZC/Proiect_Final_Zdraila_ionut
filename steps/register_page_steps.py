@@ -6,7 +6,7 @@ def step_impl(context):
     context.register_page.open()
 
 
-@Then('The URL should be "{url}"')
+@Then('The URL of the register page should be "{url}"')
 def step_impl(context, url):
     context.register_page.is_url_correct(url)
 
