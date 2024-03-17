@@ -14,6 +14,7 @@ class LoginPage(BasePage):
 
     def open(self):
         self.driver.get(self.LOGIN_PAGE_URL)
+        assert self.LOGIN_PAGE_URL == "https://magento.softwaretestingboard.com/customer/account/login", "Incorrect URL"
 
     def set_email(self, email):
         self.type(self.INPUT_EMAIL, email)
@@ -25,25 +26,16 @@ class LoginPage(BasePage):
         self.find(self.BUTTON_LOGIN).click()
 
     def main_error_message_is_displayed(self):
-        return self.find(self.ERROR_MESSAGE).is_displayed()
+        assert self.message_error_is_displayed(self.ERROR_MESSAGE), "Error message not displayed "
 
     def main_error_message_contains_text(self, text):
-        return text in self.get_text(self.ERROR_MESSAGE)
+        assert text in self.get_text(self.ERROR_MESSAGE), "Incorrect text message"
 
     def email_error_message_is_displayed(self):
-        return self.find(self.INVALID_EMAIL_MESSAGE).is_displayed()
+        assert self.message_error_is_displayed(self.INVALID_EMAIL_MESSAGE), "Email error not displayed"
 
     def password_error_message_is_displayed(self):
-        return self.find(self.PASSWORD_ERROR).is_displayed()
+        assert self.message_error_is_displayed(self.PASSWORD_ERROR), "Password error not displayed"
 
     def email_error_message_contains_text(self, text):
-        return text in self.get_text(self.INVALID_EMAIL_MESSAGE)
-
-
-
-
-
-
-
-
-
+        assert text in self.get_text(self.INVALID_EMAIL_MESSAGE), "Incorrect error message "

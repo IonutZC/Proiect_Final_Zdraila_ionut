@@ -22,7 +22,7 @@ class RegisterPage(BasePage):
 
     def open(self):
         self.driver.get(self.REGISTER_PAGE_URL)
-        # time.sleep(6)
+        assert self.REGISTER_PAGE_URL == "https://magento.softwaretestingboard.com/customer/account/create/"
 
     def is_register_button_displayed(self):
         return self.find(self.REGISTER_BUTTON).is_displayed()
@@ -31,19 +31,19 @@ class RegisterPage(BasePage):
         self.find(self.REGISTER_BUTTON).click()
 
     def first_name_error_is_displayed(self):
-        return self.message_error_is_displayed(self.FIRST_NAME_ERROR)
+        assert self.message_error_is_displayed(self.FIRST_NAME_ERROR), 'First name error not displayed'
 
     def last_name_error_is_displayed(self):
-        return self.message_error_is_displayed(self.LAST_NAME_ERROR)
+        assert self.message_error_is_displayed(self.LAST_NAME_ERROR), 'Last name error not displayed'
 
     def register_email_error_is_displayed(self):
-        return self.message_error_is_displayed(self.REGISTER_EMAIL_ERROR)
+        assert self.message_error_is_displayed(self.REGISTER_EMAIL_ERROR), 'Email error not displayed'
 
     def register_password_error_is_displayed(self):
-        return self.message_error_is_displayed(self.REGISTER_PASSWORD_ERROR)
+        assert self.message_error_is_displayed(self.REGISTER_PASSWORD_ERROR), 'Password error not displayed'
 
     def confirm_password_error_is_displayed(self):
-        return self.message_error_is_displayed(self.CONFIRM_PASSWORD_ERROR)
+        assert self.message_error_is_displayed(self.CONFIRM_PASSWORD_ERROR), 'Confirm password not displayed'
 # Set inputs
 
     def set_first_name(self, first_name):
@@ -68,14 +68,14 @@ class RegisterPage(BasePage):
 
 # Errors
     def register_email_error_message_contains_text(self, text):
-        return text in self.get_text(self.REGISTER_EMAIL_ERROR)
+        assert text in self.get_text(self.REGISTER_EMAIL_ERROR), 'Incorrect error message'
 
     def confirm_password_error_message_contains_text(self, text):
-        return text in self.get_text(self.CONFIRM_PASSWORD_ERROR)
+        assert text in self.get_text(self.CONFIRM_PASSWORD_ERROR), 'Incorrect error message'
 
 # Success message
     def success_register_message_is_displayed(self):
-        return self.message_error_is_displayed(self.SUCCESS_REGISTER_MESSAGE)
+        assert self.message_error_is_displayed(self.SUCCESS_REGISTER_MESSAGE), 'Success message not displayed'
 
     def success_register_message_test(self, text):
-        return text == self.get_text(self.SUCCESS_REGISTER_MESSAGE)
+        assert text == self.get_text(self.SUCCESS_REGISTER_MESSAGE)
